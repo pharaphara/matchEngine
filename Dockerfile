@@ -1,5 +1,5 @@
-FROM openjdk:11
+FROM openjdk:alpine-jre
 VOLUME [ "/tmp" ]
 ADD  matchEngine-1.jar app.jar
 EXPOSE 8080
-ENTRYPOINT [ "sh","-c","java -jar /app.jar" ]
+ENTRYPOINT [ "sh","-c","java -jar -Dspring.profiles.active=jenkins app.jar" ]
