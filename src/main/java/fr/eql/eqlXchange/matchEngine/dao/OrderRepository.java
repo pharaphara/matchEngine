@@ -22,7 +22,7 @@ public interface OrderRepository extends JpaRepository<Ordre, Integer>{
  	List<Ordre> findByOrderTypeAndStatusInOrderByLimitPriceAscAmountAsc(OrderType type, List<OrderStatus> list);
 	List<Ordre> findByUser(String user);
 	Ordre findFirstByCurrencyPairAndStatusOrderByIdAsc(TradingPair pair,OrderStatus status);
-	Ordre findFirstByUserOrderByIdAsc(String user);
+	Ordre findFirstByUserOrderByIdDesc(String user);
 	List<Ordre> findByCurrencyPairAndFilledDateBetweenOrderByFilledDateAsc(TradingPair pair, LocalDateTime start, LocalDateTime end);
 	List<Ordre> findByCurrencyPair(TradingPair pair);
 }

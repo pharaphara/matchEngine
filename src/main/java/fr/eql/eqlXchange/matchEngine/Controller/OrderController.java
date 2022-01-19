@@ -55,7 +55,7 @@ public class OrderController {
 	
 	@GetMapping("/lastOrder")
 	public ResponseEntity<Ordre> getLastOrder(@RequestParam String user){
-		return new ResponseEntity<Ordre>(orderRepository.findFirstByUserOrderByIdAsc(user), HttpStatus.OK) ;
+		return new ResponseEntity<Ordre>(orderRepository.findFirstByUserOrderByIdDesc(user), HttpStatus.OK) ;
 	}
 
 	@GetMapping("/status")
