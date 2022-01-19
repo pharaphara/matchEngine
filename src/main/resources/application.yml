@@ -18,6 +18,18 @@ spring:
     username: root
     url: jdbc:mysql://localhost:3306/matchingengine?createDatabaseIfNotExist=true&serverTimezone=UTC
     password: root
+    initialization-mode: always
+  sql:
+    init:
+      mode: always
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+    defer-datasource-initialization: 'true'
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: 'true'
     
 services:
   walletApi: localhost:9090/assets-api-rest/sendPayment
