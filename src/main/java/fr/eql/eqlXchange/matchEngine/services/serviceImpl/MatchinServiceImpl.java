@@ -56,8 +56,8 @@ public class MatchinServiceImpl implements MatchingService {
 		allOpenBid.forEach(bidOrder->bidBooks.get(bidOrder.getCurrencyPair()).add(bidOrder));
 		allOpenAsk.forEach(askOrder->askBooks.get(askOrder.getCurrencyPair()).add(askOrder));
 
-
-		bookToConsole();
+		
+		//bookToConsole();
 
 	}
 
@@ -82,7 +82,7 @@ public class MatchinServiceImpl implements MatchingService {
 	public void updateBook(Ordre newOrder) {
 
 		init();
-		bookToConsole();
+		//bookToConsole();
 		matchOrders();
 
 	}
