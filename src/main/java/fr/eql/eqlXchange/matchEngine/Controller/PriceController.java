@@ -1,6 +1,7 @@
 package fr.eql.eqlXchange.matchEngine.Controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,6 +32,10 @@ public class PriceController {
 	@GetMapping("/getLastPrice")
 	public ResponseEntity<PriceDto> getLastPrice(@RequestParam TradingPair pair){
 		return new ResponseEntity<PriceDto>(priceServices.getLastPrice(pair), HttpStatus.OK) ;
+	}
+	@GetMapping("/getLastPrices")
+	public ResponseEntity<Map<TradingPair, PriceDto>> getLastPrices(){
+		return new ResponseEntity<Map<TradingPair, PriceDto>>(priceServices.getLastPrices(), HttpStatus.OK) ;
 	}
 
 	@GetMapping("/getPrices") 

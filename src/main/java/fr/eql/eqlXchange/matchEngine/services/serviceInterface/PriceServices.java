@@ -2,6 +2,7 @@ package fr.eql.eqlXchange.matchEngine.services.serviceInterface;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 import fr.eql.eqlXchange.matchEngine.constant.Interval;
 import fr.eql.eqlXchange.matchEngine.constant.TradingPair;
@@ -15,6 +16,7 @@ public interface PriceServices {
 	List<PriceDto> getPricesBetween(TradingPair pair,LocalDateTime start, LocalDateTime end);
 	List<PriceDto> getPricesBetween(PricesRequest request);
 	List<Double[]>getLastCandles(TradingPair pair,Interval interval,int nb);
+	Map<TradingPair, PriceDto> getLastPrices();
 	
 
 }

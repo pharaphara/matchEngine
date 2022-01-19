@@ -47,7 +47,9 @@ public class WalletServicesImpl implements WalletServices {
 	@Override
 	public void sendPayment(Ordre ordre) {
 		
-		priceServices.setLastPrice(new PriceDto(ordre));
+		PriceDto price = new PriceDto(ordre);
+		System.out.println(price);
+		priceServices.setLastPrice(price);
 		
 		//BTC_EUR : BTC=BASE ,  EUR=COUNTER
 

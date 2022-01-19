@@ -55,6 +55,7 @@ public class PriceServicesImpl  implements PriceServices{
 	@Override
 	public void setLastPrice(PriceDto price) {
 		lastPrices.put(price.getCurrencyPair(), price);
+		System.out.println(lastPrices);
 		
 	}
 
@@ -78,6 +79,12 @@ public class PriceServicesImpl  implements PriceServices{
 		List<PriceDto> prices=getPricesBetween(pair, LocalDateTime.now().minusHours(1), LocalDateTime.now());
 		
 		return null;
+	}
+
+	@Override
+	public Map<TradingPair, PriceDto> getLastPrices() {
+		
+		return lastPrices;
 	}
 
 	
