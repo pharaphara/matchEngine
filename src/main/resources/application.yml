@@ -59,4 +59,4 @@ spring:
     show-sql: 'true'
  
 services:
-  walletApi: localhost:9090/assets-api-rest/sendPayment
+  walletApi: 192.168.33.20:9090/assets-api-rest/sendPayment
