@@ -1,4 +1,4 @@
-FROM openjdk:11-alpine
+FROM openjdk:11
 VOLUME [ "/tmp" ]
 ADD  matchEngine-1.jar app.jar
 EXPOSE 8080
