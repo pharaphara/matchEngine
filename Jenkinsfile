@@ -18,7 +18,7 @@ pipeline {
         stage('Checkout Project') {
             steps {
                 echo "-=- Checout project -=-"
-                git branch: 'master', url: 'https://github.com/pharaphara'
+                git branch: 'master', url: 'https://github.com/pharaphara/matchEngine'
             }
         }
         
