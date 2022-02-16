@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+triggers { pollSCM '* * * * *' }
+     options {
+    buildDiscarder(logRotator(numToKeepStr: '2', artifactNumToKeepStr: '2'))
+  }
     environment {
         AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
@@ -8,12 +11,9 @@ pipeline {
         AWS_S3_BUCKET = 'mydeploys3'
         AWS_EB_APP_NAME = '2-matchEngine'
         AWS_EB_ENVIRONMENT = '2matchengine-env'
-        AWS_EB_APP_VERSION = "${BUILD_ID}"
+        AWS_EB_APP_VERSION = "${BUILD_ID}-local"
     }
-    tools {
-        maven 'MVN'
-    }
-   
+ 
     stages {
         stage('Checkout Project') {
             steps {
