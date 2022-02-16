@@ -11,7 +11,7 @@ triggers { pollSCM '* * * * *' }
         AWS_S3_BUCKET = 'mydeploys3'
         AWS_EB_APP_NAME = '2-matchEngine'
         AWS_EB_ENVIRONMENT = '2matchengine-env'
-        AWS_EB_APP_VERSION = "${BUILD_ID}"
+        AWS_EB_APP_VERSION = "${BUILD_ID}-local"
     }
  
     stages {
