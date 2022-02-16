@@ -13,10 +13,7 @@ triggers { pollSCM '* * * * *' }
         AWS_EB_ENVIRONMENT = '2matchengine-env'
         AWS_EB_APP_VERSION = "${BUILD_ID}"
     }
-    tools {
-        maven 'MVN'
-    }
-   
+ 
     stages {
         stage('Checkout Project') {
             steps {
