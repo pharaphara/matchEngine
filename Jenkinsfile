@@ -9,8 +9,8 @@ triggers { pollSCM '* * * * *' }
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
         ARTIFACT_NAME = "matchengine-${BUILD_ID}.jar"
         AWS_S3_BUCKET = 'terradeploy'
-        AWS_EB_APP_NAME = 'terradeploy'
-        AWS_EB_ENVIRONMENT = 'terradeploy-env'
+        AWS_EB_APP_NAME = 'matchengine'
+        AWS_EB_ENVIRONMENT = 'matchengine-env'
         AWS_EB_APP_VERSION = "${BUILD_ID}"
     }
  
