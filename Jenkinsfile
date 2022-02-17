@@ -8,10 +8,10 @@ triggers { pollSCM '* * * * *' }
         AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
         ARTIFACT_NAME = "matchengine-${BUILD_ID}.jar"
-        AWS_S3_BUCKET = 'mydeploys3'
-        AWS_EB_APP_NAME = '2-matchEngine'
-        AWS_EB_ENVIRONMENT = '2matchengine-env'
-        AWS_EB_APP_VERSION = "${BUILD_ID}-local"
+        AWS_S3_BUCKET = 'terradeploy'
+        AWS_EB_APP_NAME = 'matchengine'
+        AWS_EB_ENVIRONMENT = 'matchengine-env'
+        AWS_EB_APP_VERSION = "${BUILD_ID}"
     }
  
     stages {
@@ -57,7 +57,7 @@ triggers { pollSCM '* * * * *' }
             steps{
             
                 sh 'aws configure set region eu-west-3'
-                sh 'aws s3 cp ./target/*.jar s3://mydeploys3/$ARTIFACT_NAME'
+                sh 'aws s3 cp ./target/*.jar s3://$AWS_S3_BUCKET/$ARTIFACT_NAME'
                 
                 
                 
